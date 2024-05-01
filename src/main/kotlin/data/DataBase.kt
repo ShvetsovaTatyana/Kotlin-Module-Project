@@ -1,12 +1,7 @@
 package data
 
 object DataBase {
-    private val dataBase: MutableMap<String, ArrayList<Note>> = mutableMapOf(
-        "Архив 1" to arrayListOf(
-            Note("Заметка 1", "Текст заметки 1"),
-            Note("Заметка 2", "Текст заметки 2")
-        )
-    )
+    private val dataBase: MutableMap<String, ArrayList<Note>> = mutableMapOf()
 
     fun getArchives(): List<String> {
         return dataBase.keys.toList()
