@@ -1,3 +1,8 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import screens.ArchiveListScreen
+
+fun main() {
+    var currentScreen = ArchiveListScreen()
+    while (true) {
+        currentScreen.showMenu()
+    }
 }
