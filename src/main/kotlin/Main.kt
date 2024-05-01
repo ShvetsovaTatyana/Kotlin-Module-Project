@@ -1,8 +1,8 @@
-import screens.ArchiveListScreen
 
 fun main() {
-    var currentScreen = ArchiveListScreen()
-    while (true) {
+    var currentScreen = Navigation.currentScreen
+    while (currentScreen != null) {
         currentScreen.showMenu()
+        currentScreen = Navigation.currentScreen
     }
 }

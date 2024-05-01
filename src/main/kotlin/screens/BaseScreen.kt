@@ -1,13 +1,14 @@
 package screens
 
+import MenuItem
 import java.util.Scanner
 
-abstract class BaseScreen(protected val menuItems: List<String>) {
+abstract class BaseScreen(protected val menuItems: List<MenuItem>) {
     private val scanner: Scanner = Scanner(System.`in`)
 
     fun showMenu() {
-        for (i in 0 until menuItems.size) {
-            println("$i. ${menuItems[i]}")
+        for (i in menuItems.indices) {
+            println("$i. ${menuItems[i].title}")
         }
         readInput()
     }
