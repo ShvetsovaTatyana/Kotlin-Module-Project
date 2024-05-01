@@ -1,12 +1,16 @@
-package screens
+package screens.base
 
 import MenuItem
-import java.util.Scanner
 
-abstract class BaseScreen(protected val menuItems: List<MenuItem>) {
-    private val scanner: Scanner = Scanner(System.`in`)
+abstract class BaseMenuScreen : BaseScreen() {
+    protected val menuItems: ArrayList<MenuItem> = arrayListOf()
 
-    fun showMenu() {
+    override fun showScreen() {
+        updateMenuItems()
+        showMenu()
+    }
+
+    private fun showMenu() {
         for (i in menuItems.indices) {
             println("$i. ${menuItems[i].title}")
         }
@@ -28,6 +32,8 @@ abstract class BaseScreen(protected val menuItems: List<MenuItem>) {
             showMenu()
         }
     }
+
+    abstract fun updateMenuItems()
 
     abstract fun processInput(number: Int)
 }

@@ -1,5 +1,5 @@
 import screens.ArchiveListScreen
-import screens.BaseScreen
+import screens.base.BaseScreen
 import java.util.Stack
 
 object Navigation {
